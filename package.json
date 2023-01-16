@@ -1,0 +1,29 @@
+{
+  "name": "webcomponent-dev-test-kit",
+  "version": "0.9.0",
+  "description": "Webcomponent test kit with TypeScript support for use to test webcomponents on local machine. Minimal dev-server and example webcomponent setup included.",
+  "engines": {
+    "node": "^16.15.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config-name=dev",
+    "build": "webpack --config-name=prod"
+  },
+
+  "dependencies": {
+    "@lit/reactive-element": "^1.0.0",
+    "lit": "^2.0.0",
+    "lit-element": "^3.0.0",
+    "lit-html": "^2.0.0"
+   
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "html-webpack-plugin": "^3.2.0",
+    "terser-webpack-plugin": "^2.3.5",
+    "typescript": "^3.8.2",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
