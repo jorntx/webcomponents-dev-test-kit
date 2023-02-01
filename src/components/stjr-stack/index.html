@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>stjr-stack</title>
+		<script type="module" src="./stjr-stack.ts"></script>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>">
+	</head>
+
+	<body>
+
+		<h1>StjStack Component</h1>
+
+		<stjr-stack>
+			<div>Render me</div>
+		</stjr-stack>
+
+		<h2>Arbitarily many  children may populate a single slot</h2>
+
+		<stjr-stack>
+			<div>Render me</div>
+			<div>Me too</div>
+			<div>Me three</div>
+		</stjr-stack>
+
+		<h2>Set the direction to horizontal:</h2>
+
+		<stjr-stack direction="horizontal">
+			<div>Render me</div>
+			<div>Me too</div>
+			<div>Me three</div>
+		</stjr-stack>
+
+		<h2>Small gap:</h2>
+
+		<stjr-stack direction="horizontal" gap="s">
+			<div>Render me</div>
+			<div>Me too</div>
+			<div>Me three</div>
+			<div>Four to the floor!</div>
+		</stjr-stack>
+
+		<h2>Large gap:</h2>
+
+		<stjr-stack direction="horizontal" gap="l">
+			<div>Render me</div>
+			<div>Me too</div>
+			<div>Me three</div>
+		</stjr-stack>
+
+		<h2>Small gap, vertical:</h2>
+
+		<stjr-stack direction="vertical" gap="s">
+			<div>Render me</div>
+			<div>Me too</div>
+			<div>Me three</div>
+		</stjr-stack>
+
+		<h2>Large gap, vertical:</h2>
+
+		<stjr-stack gap="l">
+			<div>Render me</div>
+			<div>Me too</div>
+			<div>Me three</div>
+		</stjr-stack>
+
+	</body>
+
+</html>

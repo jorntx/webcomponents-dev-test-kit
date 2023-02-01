@@ -1,79 +1,241 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
- </head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Components Canvas</title>
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		:root {
+			/* Common, start */
+			--rdl-clr-white:      hsl(0, 0%, 100%);
+			--rdl-clr-black:      hsl(0, 0%, 13%);
+			--rdl-clr-blue:       rgba(0, 46, 112, 1);
+			--rdl-clr-blue-dark:  rgba(0, 31, 112, 1);
+			--rdl-clr-blue-light: rgba(0, 46, 112, 0.8);
+
+			--rdl-transition-base: all 0.2s ease-in-out;
+
+			--rdl-border-radius: 2px;
+			/* Common, end */
+
+			/* Button component, start */
+			--rdl-btn-clr: var(--rdl-clr-white);
+			--rdl-btn-clr-bg: var(--rdl-clr-blue);
+			--rdl-btn-clr-bg-hover: var(--rdl-clr-blue-dark);
+			--rdl-btn-outline: 0.125rem solid var(--rdl-btn-clr-bg-hover, --rdl-clr-blue-dark);
+			--rdl-btn-outline-offset: 0.125rem;
+			--rdl-btn-transition: var(var(--rdl-transition-base));
+			--rdl-btn-border: 0 solid transparent;
+			--rdl-btn-border-radius: var(--rdl-border-radius);
+			/* Button component, end */
+
+			/* Input component, start */
+			--rdl-input-clr: var(--rdl-clr-black);
+			--rdl-input-clr-bg: var(--rdl-clr-white);
+			--rdl-input-outline: 0.125rem solid var(--rdl-clr-blue-dark);
+			--rdl-input-outline-offset: 0.125rem;
+			--rdl-input-transition: var(var(--rdl-transition-base));
+			--rdl-input-border: 0 solid transparent;
+			--rdl-input-border-radius: var(--rdl-border-radius);
+			/* Input component, end */
+		}
+
+		.example {
+			background-color: rgba(0, 40, 255, 0.05);
+			border: 1px solid rgba(0, 40, 255, 0.05);
+			padding: 1rem;
+		}
+	</style>
+
+</head>
 <body>
-  <h1>Use the <code>slot</code> element to render children</h1>
+	<h1>Web Components Canvas</h1>
 
-  <rdl-stack>
-    <div>Render me</div>
-  </rdl-stack>
+	<!--
+		<h2>Combined <code>stjr-stack</code> + <code>stjr-input</code> + <code>stjr-button</code></h2>
+		
+		<div class="example">
+			<form action="#">
+			<stjr-stack direction="horizontal" gap="none">
+				<stjr-input></stjr-input>
+				<stjr-button>Button</stjr-button>
+			</stjr-stack>
+		</form>
+	</div>
+-->
+	
+	<h2>stjr-search</h2>
 
-  <h2>Arbitarily many  children may populate a single slot</h2>
-  
-  <rdl-stack>
-    <div>Render me</div>
-    <div>Me too</div>
-    <div>Me three</div>
-  </rdl-stack>
+	<div class="example">
+		<stjr-search></stjr-search>
+	</div>
 
-  <h2>Set the direction to horizontal:</h2>
+	<h2>stjr-button</h2>
 
-  <rdl-stack direction="horizontal">
-    <div>Render me</div>
-    <div>Me too</div>
-    <div>Me three</div>
-  </rdl-stack>
+	<div class="example">
+		<stjr-button>Button</stjr-button>
+	</div>
 
-  <h2>Small gap:</h2>
+	<h2>stjr-button, with slots</h2>
+	<div class="example">
+		<stjr-button variant="primary">
+			<stjr-icon slot="end">🌛</stjr-icon>
+			Button, Primary
+			<stjr-icon slot="start">⭐</stjr-icon>
+		</stjr-button>
+	</div>
 
-  <rdl-stack direction="horizontal" gap="s">
-    <div>Render me</div>
-    <div>Me too</div>
-    <div>Me three</div>
-    <div>Four to the floor!</div>
-  </rdl-stack>
+	<h2>stjr-input</h2>
 
-  <h2>Large gap:</h2>
+	<div class="example">
+		<stjr-input></stjr-input>
+	</div>
 
-  <rdl-stack direction="horizontal" gap="l">
-    <div>Render me</div>
-    <div>Me too</div>
-    <div>Me three</div>
-  </rdl-stack>
+	<h2>stjr-stack</h2>
 
-  <h2>Small gap, vertical:</h2>
+	<div class="example">
+		<stjr-stack>
+			<div>1st. child<br>Multiple lines<br>of content</div>
+		</stjr-stack>
+	</div>
 
-  <rdl-stack direction="vertical" gap="s">
-    <div>Render me</div>
-    <div>Me too</div>
-    <div>Me three</div>
-  </rdl-stack>
+	<h3>Arbitarily many  children may populate a single slot</h3>
 
-  <h2>Large gap, vertical:</h2>
+	<div class="example">
+		<stjr-stack>
+			<div>1st. child<br>Multiple lines<br>of content</div>
+			<div>2nd. child</div>
+			<div>3rd. child</div>
+		</stjr-stack>
+	</div>
 
-  <rdl-stack gap="l">
-    <div>Render me</div>
-    <div>Me too</div>
-    <div>Me three</div>
-  </rdl-stack>
+	<h3>Set the direction to horizontal:</h3>
+
+	<div class="example">
+		<stjr-stack direction="horizontal">
+			<div>1st. child<br>Multiple lines<br>of content</div>
+			<div>2nd. child</div>
+			<div>3rd. child</div>
+		</stjr-stack>
+	</div>
+
+	<h3>Small gap:</h3>
+
+	<div class="example">
+		<stjr-stack direction="horizontal" gap="s">
+			<div>1st. child<br>Multiple lines<br>of content</div>
+			<div>2nd. child</div>
+			<div>3rd. child</div>
+			<div>Four to the floor!</div>
+		</stjr-stack>
+	</div>
+
+	<h3>Medium gap (default):</h3>
+
+	<div class="example">
+		<stjr-stack direction="horizontal" gap="m">
+			<div>1st. child<br>Multiple lines<br>of content</div>
+			<div>2nd. child</div>
+			<div>3rd. child</div>
+			<div>Four to the floor!</div>
+		</stjr-stack>
+	</div>
+
+	<h3>Large gap:</h3>
+
+	<div class="example">
+		<stjr-stack direction="horizontal" gap="l">
+			<div>1st. child<br>Multiple lines<br>of content</div>
+			<div>2nd. child</div>
+			<div>3rd. child</div>
+		</stjr-stack>
+	</div>
+
+	<h3>Small gap, vertical:</h3>
+
+	<div class="example">
+		<stjr-stack direction="vertical" gap="s">
+			<div>1st. child<br>Multiple lines<br>of content</div>
+			<div>2nd. child</div>
+			<div>3rd. child</div>
+		</stjr-stack>
+	</div>
+
+	<h3>Large gap, vertical:</h3>
+
+	<div class="example">
+		<stjr-stack gap="l">
+			<div>1st. child<br>Multiple lines<br>of content</div>
+			<div>2nd. child</div>
+			<div>3rd. child</div>
+		</stjr-stack>
+	</div>
+
+	<h3>Justify Content: start</h3>
+
+	<div class="example">
+		<stjr-stack direction="horizontal" justify-content="start">
+			<div>1st. child<br>Multiple lines<br>of content</div>
+			<div>2nd. child</div>
+			<div>3rd. child</div>
+		</stjr-stack>
+	</div>
+
+	<h3>Justify Content: center</h3>
+
+	<div class="example">
+		<stjr-stack direction="horizontal" justify-content="center">
+			<div>1st. child<br>Multiple lines<br>of content</div>
+			<div>2nd. child</div>
+			<div>3rd. child</div>
+		</stjr-stack>
+	</div>
+
+	<h3>Justify Content: end</h3>
+
+	<div class="example">
+		<stjr-stack direction="horizontal" justify-content="end">
+			<div>1st. child<br>Multiple lines<br>of content</div>
+			<div>2nd. child</div>
+			<div>3rd. child</div>
+		</stjr-stack>
+	</div>
+
+	<h3>Align Items: start</h3>
+
+	<div class="example">
+		<stjr-stack direction="horizontal" align-items="start">
+			<div>1st. child<br>Multiple lines<br>of content</div>
+			<div>2nd. child</div>
+			<div>3rd. child</div>
+		</stjr-stack>
+	</div>
+
+	<h3>Align Items: center</h3>
+
+	<div class="example">
+		<stjr-stack direction="horizontal" align-items="center">
+			<div>1st. child<br>Multiple lines<br>of content</div>
+			<div>2nd. child</div>
+			<div>3rd. child</div>
+		</stjr-stack>	
+	</div>	
+
+	<h3>Align Items: end</h3>
+
+	<div class="example">
+		<stjr-stack direction="horizontal" align-items="end">
+			<div>1st. child<br>Multiple lines<br>of content</div>
+			<div>2nd. child</div>
+			<div>3rd. child</div>
+		</stjr-stack>
+	</div>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
